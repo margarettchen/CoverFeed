@@ -60,7 +60,12 @@ body {
 	width: 100%;
 }
 
+.signup:hover {
+	cursor: pointer;
+}
+
 .signup {
+	border-radius: 8px;
 	margin-top: 2%;
 	margin-left: 43%;
 	font-size: 30px;
