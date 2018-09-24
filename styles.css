@@ -1,0 +1,61 @@
+body {
+	margin: 0 auto;
+}
+
+.nav-bar {
+	list-style: none;
+	background-color: #FFFFFF;
+	padding-left: 2%;
+}
+
+.nav-bar li {
+	display: inline-block;
+	padding-left: 3%;
+	font-family: Montserrat;
+	vertical-align: middle;
+}
+
+.nav-bar a {
+	text-decoration: none;
+	color: #484848;
+}
+
+.logo h1 {
+	font-family: 'Pacifico', cursive;
+	font-size: 40px;
+	margin: 0;
+	color: #484848;
+}
+
+.logo {
+	padding-right: 40%;
+}
+
+/*end of nav bar css*/
+
+.about-heading {
+	padding-top: 4%;
+	padding-bottom: 3%;
+	text-align: center;
+	color: white;
+	font-family: Montserrat;
+}
+
+.about-content {
+	text-align: center;
+}
+
+.column {
+	display: inline-block;
+	width: 28%;
+	text-align: center;
+	color: white;
+	font-family: Montserrat;
+	padding: 1%;
+}
+
+.aboutus-page {
+	background-color: #479761;
+	height: 700px;
+	width: 100%;
+}
