@@ -1,53 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8" />
-	<title>About Us</title>
-	<link rel='stylesheet' href='styles.css' type='text/css' />
+	<meta charset="utf-8">
+
+	<title>CoverFeed</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,600i,700i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+	<script type="text/javascript" src="main.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 </head>
-	<div class="aboutus-page">
-	<div class = "nav-bar">
-		<li class="logo">
-			<h1>CoverFeed</h1>
-		</li>
-		<li>
-			<a href="">Home</a>
-		</li>
-		<li>
-			<a href="">Events</a>
-		</li>
-		<li>
-			<a href="">About</a>
-		</li>
-		<li>
-			<a href="">Contact</a>
-		</li>
-		<li>
-			<a href="">Sign In</a>
-		</li>
-	</div>
-
-	<h1 class="about-heading">Local Events for Your Community</h1>
-
-	<div class="about-content">
-		<div class="column1 column">
-			<img class="icon1" src="002-volunteer.png">
-			<h2>Discover your Friend's Events</h2>
-			<p>See what events your friends are attending by scrolling through your feed</p>
+<body>
+	<div class="ATF">
+		<div class="logo">
+			CoverFeed
 		</div>
-		<div class="column2 column">
-			<img class="icon2" src="001-volunteer-2.png">
-			<h2>Sign Up Ahead of Time</h2>
-			<p>Pay event cover charges ahead of time through our digital payment system</p>
-		</div>
-		<div class="column3 column">
-			<img class="icon3" src="003-volunteer-1.png">
-			<h2>Host/Track Your Own Events</h2>
-			<p>Easily manage your own events by automating the payment and list process</p>
+		<div class="searchBox">
+			<div class="searchBoxText">Get in on events near you.</div>
+			<div class="searchWhere">
+				Where
+				<input type="text" name="where" placeholder="" class="whereField">
+			</div>
+			<div class="searchWhen">
+				When
+				<input type="text" name="when" placeholder="" class="whenField">
+			</div>
+			<div class="searchButton">
+				<div class="searchButtonText">Search</div>
+			</div>
 		</div>
 	</div>
-
-	<button class="signup">Sign Up Now</button>
-	
-	</div> <!-- aboutus-page closing div -->
+	<div class="BTF">
+		<div class="findEvents">
+			<div class="findEventsTitle">Find events across America</div>
+			<div class="findEventsImages">
+				<div class="findEventsImage one">
+					<div class="findEventsText">Charlottesville, VA</div>
+				</div>
+				<div class="findEventsImage two">
+					<div class="findEventsText">Washington, DC</div>
+				</div>
+				<div class="findEventsImage three">
+					<div class="findEventsText">New York, NY</div>
+				</div>
+			</div>
+		</div>
+		<div class="leftBlock">
+			<div class="leftBlockText">See what your friends are attending.</div>
+			<img src="images/friends.png" class="friendsImage">
+		</div><div class="rightBlock">
+			<div class="rightBlockText">Organize and fund events with ease.</div>
+			<img src="images/organize.png" class="organizeImage">
+		</div>
+	</div>
+</body>
+</html>

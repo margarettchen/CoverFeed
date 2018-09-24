@@ -1,68 +1,201 @@
 body {
-	margin: 0 auto;
-}
-
-.nav-bar {
-	list-style: none;
-	background-color: #FFFFFF;
-	padding-left: 2%;
-}
-
-.nav-bar li {
-	display: inline-block;
-	padding-left: 3%;
-	font-family: 'Montserrat';
-	vertical-align: middle;
-}
-
-.nav-bar a {
-	text-decoration: none;
-	color: #484848;
-}
-
-.logo h1 {
-	font-family: 'Pacifico', cursive;
-	font-size: 40px;
 	margin: 0;
-	color: #484848;
+	font-family: "Montserrat", sans-serif;
+	color: white;
+	background-color: #19191B;
+}
+
+input {
+	border-style: none;
+	background-color: #EEEEEE;
+	font-family: "Montserrat", sans-serif;
+	font-size: 1.6vw;
+	border-radius: 6px;
+	outline: none;
+	height: 40px;
+	width: 90%;
+	margin-top: 1%;
+	position: relative;
+}
+
+.ATF {
+	width: 100%
+	height: 1440px;
+	background-image: url("images/homeBack.jpg");
+	background-size: cover;
 }
 
 .logo {
-	padding-right: 40%;
-}
-
-/*end of nav bar css*/
-
-.about-heading {
-	padding-top: 4%;
-	padding-bottom: 3%;
-	text-align: center;
+	font-family: "Pacifico", sans-serif;
+	font-size: 6vw;
 	color: white;
-	font-family: Montserrat;
+	margin-left: 8%;
 }
 
-.about-content {
-	text-align: center;
-}
-
-.column {
-	display: inline-block;
+.searchBox {
+	color: #19191B;
+	background-color: white;
+	border-radius: 2%;
 	width: 28%;
+	height: auto;
+	display: inline-block;
+	margin-left: 8%;
+	margin-bottom: 210px;
+	margin-top: 4%;
+}
+
+.searchBoxText {
+	font-size: 1.8vw;
+	padding-left: 6%;
+	padding-top: 4%;
+}
+
+.searchWhere {
+	padding-top: 8%;
+	padding-left: 6%;
+	font-size: 1.2vw;
+}
+
+.whereField {
+	background-image: url("images/pin.png");
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position: 95% 50%;
+}
+
+.whenField {
+	background-image: url("images/calendar.png");
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position: 95% 50%;
+}
+
+.searchWhereIcon {
+	width: 2.4%;
+	position: absolute;
+	left: 30.5%;
+	top: 49.5%;
+}
+
+.searchWhen {
+	padding-top: 4%;
+	padding-left: 6%;
+	font-size: 1.2vw;
+}
+
+.searchButton:hover {
+	cursor: pointer;
+}
+
+.searchButton:active {
+	background-color: #24763F;
+}
+
+.searchButton {
 	text-align: center;
+	font-size: 1.4vw;
 	color: white;
-	font-family: Montserrat;
-	padding: 1%;
-}
-
-.aboutus-page {
 	background-color: #479761;
-	height: 800px;
-	width: 100%;
+	border-radius: 6px;
+	height: 40px;
+	width: 85%;
+	margin-top: 8%;
+	margin-left: 6%;
+	margin-bottom: 12%;
 }
 
-.signup {
-	margin-top: 2%;
-	margin-left: 43%;
-	font-size: 30px;
-	font-family: 'Pacifico', cursive;
+.searchButtonText {
+	padding-top: 3%;
+}
+
+.findEvents {
+	color: white;
+	font-weight: bold;
+	margin: 8%;
+}
+
+.findEventsTitle {
+	font-size: 2vw;
+	margin-bottom: 3%;
+}
+
+.findEventsImage:hover {
+	cursor: pointer;
+}
+
+.findEventsImage:active {
+	opacity: .5;
+}
+
+.findEventsImage, .one {
+	background-image: url("images/uva.jpg");
+	background-size: cover;
+	width: 30%;
+	height: 170px;
+	border-radius: 8px;
+	text-align: center;
+	display: inline-block;
+	margin-right: 2%;
+}
+
+.two {
+	background-image: url("images/dc.jpg");
+}
+
+.three {
+	background-image: url("images/nyc.jpg");
+	margin-right: 0;
+}
+
+.findEventsText {
+	font-size: 1.8vw;
+	padding-top: 24%;
+}
+
+.leftBlock {
+	display: inline-block;
+	background-color: #CEBB84;
+	width: 50%;
+	height: 40%;
+}
+
+.rightBlock {
+	display: inline-block;
+	background-color: #E77171;
+	width: 50%;
+	height: 40%;
+}
+
+.leftBlockText {
+	font-weight: bold;
+	font-size: 1.7vw;
+	margin-left: 29%;
+	padding-top: 6%;
+	width: 40%;
+	text-align: center;
+}
+
+.rightBlockText {
+	font-weight: bold;
+	font-size: 1.7vw;
+	margin-left: 30%;
+	padding-top: 6%;
+	width: 40%;
+	text-align: center;
+}
+
+.friendsImage {
+	width: 30%;
+	height: auto;
+	margin-left: 33%;
+	margin-top: 8%;
+	margin-bottom: 16%;
+}
+
+.organizeImage {
+	width: 30%;
+	height: auto;
+	margin-left: 36%;
+	margin-top: 8%;
+	margin-bottom: 16%;
 }
