@@ -66,8 +66,22 @@ body {
 
 .signup {
 	border-radius: 8px;
-	margin-top: 2%;
-	margin-left: 43%;
+	margin-top: 4%;
 	font-size: 30px;
-	font-family: 'Pacifico', cursive;
+	padding: 15px;
+	width: 280px;
+	border:none;
+	font-family: 'Montserrat';
+	background-color: #FF3C3C;
+	color: white;
+	margin-left: calc(50% - 120px);
+}
+.whyCF{
+	background-color: #19191B;
+	font-family: Montserrat;
+	padding: 8%;
+	color: white;
+}
+.whyCF p{
+	font-size: 20px;
 }
