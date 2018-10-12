@@ -224,6 +224,38 @@ input {
 	margin-bottom: 16%;
 }
 
+
+.mission, .testimony{
+	margin: 8%;
+}
+.mission p{
+	font-size: 22px;
+	font-weight: lighter;
+}
+.testImage{
+	width: 200px;
+	height: auto;
+	display: inline-block;
+	border-radius: 8px;
+}
+.testimony p{
+	font-size: 22px;
+}
+.test-side{
+	width: calc(100% - 250px);
+	display: inline-block;
+	margin-right: 30px;
+	vertical-align: top;
+}
+.test-back{
+	background-color: #479761;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+.testimony h1{
+	margin-top: 0px;
+}
+
 /*----------------footer styling--------------*/
 
 .column {
@@ -252,5 +284,4 @@ input {
 #terms {
 	padding-top: 10px;
 }
-
 
