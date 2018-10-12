@@ -41,7 +41,7 @@ body{
   -o-background-size: cover;
   background-size: cover;
 
-	height: 100vh;
+	height: 110vh;
 	width: 100%;
 	display: flex;
 	/*justify-content: center;*/
@@ -130,4 +130,36 @@ body{
 }
 .new-account{
 	text-align: center;
+}
+
+
+
+
+.column {
+	width: 20%;
+	display: inline-block;
+	text-align: left;
+	list-style: none;
+}
+
+.column a {
+	text-decoration: none;
+	color: white;
+	font-size: 12px;
+}
+
+.footer {
+	text-align: center;
+	padding-bottom: 40px;
+	background-color: black;
+	color: white;
+}
+
+.socialMediaRow img {
+	width: 10%;
+	padding-right: 8px;
+}
+
+#terms {
+	padding-top: 10px;
 }
