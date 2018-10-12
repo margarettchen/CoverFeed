@@ -90,7 +90,7 @@ body {
 
 /*----------------footer styling--------------*/
 
-.column {
+.footer-column {
 	width: 20%;
 	display: inline-block;
 	text-align: left;
@@ -98,7 +98,7 @@ body {
 	color: #19191B;
 }
 
-.column a {
+.footer-column a {
 	text-decoration: none;
 	font-size: 12px;
 	color: #19191B;
@@ -109,6 +109,7 @@ body {
 	padding-bottom: 40px;
 	margin-top: 330px;
 	background-color: white;
+	font-family: Montserrat;
 }
 
 .socialMediaRow img {
