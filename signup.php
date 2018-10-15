@@ -43,13 +43,22 @@
       $db_name = pg_dbname($connection);
       $error_msg = "Please correct the following errors:\n";
 
+      $passed = true;
+
 
       if(empty($username) || empty($password) || empty($email) || empty($firstName) || empty($lastName) || empty($address) || empty($state) || empty($city) || empty($zipcode) || empty($phone))
       {
         $error_msg .= "\u2022 Please fill out all fields.\n";
+        echo "<script>alert(\"Please fill out all fields\");</script>";
+        $passed = false;
+
+        //echo "<meta http-equiv='refresh' content='0'>";
       }
       if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $error_msg .= "\u2022 Please enter a valid email address.\n";
+
+        $passed = false;
+        echo "<script>alert(\"Please enter a valid email address.\");</script>";
       }
       
       $usernameQuery = "SELECT * FROM \"Customer Information\" WHERE username = '" . $username . "'";
@@ -57,37 +66,73 @@
 
       if(pg_fetch_row($usernameQueryResult)) {
         $error_msg .= "\u2022 That username is already taken, please choose another.\n";
+        echo "<script>alert(\"That username is already taken, please choose another.\");</script>";
+        $passed = false;
       }
 
       $emailQuery = "SELECT * FROM \"Customer Information\" WHERE email = '" . $email . "'";
       $emailQueryResult = pg_query($connection, $emailQuery);
       // check email
-      if(!(pg_fetch_row($emailQueryResult))){
+      if(pg_fetch_row($emailQueryResult)){
         $error_msg .= "\u2022 An account already exists at that email address, please use another.\n";
+        echo "<script>alert(\"An account already exists at that email address, please use another.\");</script>";
+        $passed = false;
       }
 
       if (strlen($zipcode) != 5 || !ctype_digit($zipcode)) {
         $error_msg .= "\u2022 Please enter a valid 5-digit zipcode.\n";
+         echo "<script>alert(\"Please enter a valid 5-digit zipcode.\");</script>";
+         $passed = false;
       }
 
       if (strlen($phone) != 10 || !ctype_digit($phone)) {
         $error_msg .= "\u2022 Please enter a valid 10-digit phone number XXXXXXXXXX.\n";
+        echo "<script>alert(\"Please enter a valid 10-digit phone number XXXXXXXXXX.\");</script>";
+        $passed = false;
       }
 
       $check_pattern = '/\d+ [0-9a-zA-Z ]+/';
       if (!preg_match($check_pattern, $address)) {
         $error_msg .= "\u2022 Please enter a valid street address.\n";
+         echo "<script>alert(\"Please enter a valid street address.\");</script>";
+         $passed = false;
+      }
+      $check_pattern = '/[a-zA-Z]/';
+      //if (!preg_match($check_pattern, $firstName)) {
+      if(!ctype_alpha($firstName)){
+        $error_msg .= "\u2022 Please enter a valid street address.\n";
+         echo "<script>alert(\"First name can only contain letters.\");</script>";
+         $passed = false;
       }
 
-      if (strcmp("\u2022 Please fill out all fields.", $error_msg) != 0) {
-        exit(0);
+      if(!ctype_alpha($lastName)){
+        $error_msg .= "\u2022 Please enter a valid street address.\n";
+         echo "<script>alert(\"Last name can only contain letters.\");</script>";
+         $passed = false;
       }
 
-      $sqlInsert="INSERT INTO \"Customer Information\" (\"firstname\", \"lastname\", \"email\", \"username\", \"password\", \"streetaddress\", \"city\", \"state\", \"zipcode\", \"phone\") VALUES ('$firstName', '$lastName', '$email', '$username', '$password', '$address', '$city', '$state', '$zipcode', '$phone')";
+      if(!ctype_alpha($city)){
+        $error_msg .= "\u2022 Please enter a valid street address.\n";
+         echo "<script>alert(\"City can only contain letters.\");</script>";
+         $passed = false;
+      }
+
+      /*if (strcmp("\u2022 Please fill out all fields.", $error_msg) != 0) {
+      		//echo "HELLO";
+        //exit(0);
+        echo "<script>alert(\"Please fill out all fields\");</script>";
+        //echo "<script>Document.getElementById(error).innerHTML=\"Please fill out all fields\"; Document.getElementById(error).display=\"block\";</script>";
+      }*/
+      if($passed){
+
+      $sqlInsert="INSERT INTO \"Customer Information\" (\"firstname\", \"lastname\", \"email\", \"username\", \"password\", \"streetaddress\", \"city\", \"state\", \"zipcode\", \"phone\") VALUES ('$firstName', '$lastName', '$email', '$username', '$hashedPassword', '$address', '$city', '$state', '$zipcode', '$phone')";
 
       if (!pg_query($connection, $sqlInsert)) {
         die('Error inserting into table.');
       }
+
+      echo "<script>alert(\"Your account has been created.\");</script>";
+  	}
 
     }
 
@@ -98,16 +143,16 @@
       <h1>CoverFeed</h1>
     </li>
     <li>
-      <a href="index.html">Home</a>
+      <a href="index.php">Home</a>
     </li>
     <li>
       <a href="">Events</a>
     </li>
     <li>
-      <a href="about.html">About</a>
+      <a href="about.php">About</a>
     </li>
     <li>
-      <a href="contactus.html">Contact</a>
+      <a href="contactus.php">Contact</a>
     </li>
     <li>
       <a href="">Sign In</a>
@@ -118,6 +163,7 @@
         <p>Sign up to get access to hundreds of events.</p>
       </div>
       <div class="form-over">
+      	<p id="error">Error</p>
         <form method="POST" class="signup-form" action="signup.php">
           <div class="half-width" style="margin-right: 12px;">
             <p>First Name:</p>
