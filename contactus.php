@@ -54,7 +54,7 @@
           <input type="text" name="email" value="">
           <p> Message:</p>
           <textarea  name="message" form="contact-form"></textarea>
-          <br>
+          <input type="checkbox" name="vehicle" value="emailList"> Sign me up for the CoverFeed newsletter!
           <input type="submit" value="Send">
         </form>
       </div>

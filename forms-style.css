@@ -50,7 +50,7 @@ body{
 	padding-top: 3%;
 }
 .contact{
-	background-image: none;
+	background-image: url("images/night.jpg");
 	background-color: #484848;
 }
 .form-title p{
@@ -92,7 +92,7 @@ body{
 	padding-left: 10px;
 }
 .signup-form input[type=submit]{
-	margin-top: 25px;
+	margin-top: 15px;
 	margin-bottom: 0px;
 	border-style: none;
 	background-color:#E77171; 
@@ -102,6 +102,9 @@ body{
 	font-family: 'Montserrat', sans-serif;
 	font-size: 20px;
 	color: white;
+}
+.signup-form input[type=checkbox]{
+	margin-top:15px;
 }
 .signup-form textarea[name=message]{
 	border-style: none;
