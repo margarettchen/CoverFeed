@@ -146,7 +146,7 @@
       <a href="index.php">Home</a>
     </li>
     <li>
-      <a href="">Events</a>
+      <a href="events.php">Events</a>
     </li>
     <li>
       <a href="about.php">About</a>
@@ -163,7 +163,7 @@
         <p>Sign up to get access to hundreds of events.</p>
       </div>
       <div class="form-over">
-      	<p id="error">Error</p>
+      	<!-- <p id="error">Error</p> -->
         <form method="POST" class="signup-form" action="signup.php">
           <div class="half-width" style="margin-right: 12px;">
             <p>First Name:</p>

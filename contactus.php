@@ -30,7 +30,7 @@
       <a href="index.php">Home</a>
     </li>
     <li>
-      <a href="index.php">Events</a>
+      <a href="events.php">Events</a>
     </li>
     <li>
       <a href="about.php">About</a>
@@ -54,7 +54,7 @@
           <input type="text" name="email" value="">
           <p> Message:</p>
           <textarea  name="message" form="contact-form"></textarea>
-          <input type="checkbox" name="vehicle" value="emailList"> Sign me up for the CoverFeed newsletter!
+          <br>
           <input type="submit" value="Send">
         </form>
       </div>

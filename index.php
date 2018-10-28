@@ -22,7 +22,7 @@
 				<a href="">Home</a>
 			</li>
 			<li>
-				<a href="index.php">Events</a>
+				<a href="events.php">Events</a>
 			</li>
 			<li>
 				<a href="about.php">About</a>
