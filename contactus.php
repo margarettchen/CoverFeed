@@ -70,12 +70,16 @@
 
           $db_name = pg_dbname($connection);
 
+          //check if newsletter box is checked
           if ($_POST['newsletter'] == 'emailList') {
-            $sqlInsert="INSERT INTO \"Newsletter\" (\"Name\", \"Email Address\") VALUES ('$name', '$email')";
+            if($passed) {
+              
+              $sqlInsert="INSERT INTO \"Newsletter\" (\"Name\", \"Email Address\") VALUES ('$name', '$email')";
 
-          if (!pg_query($connection, $sqlInsert)) {
-            die('Error inserting into table.');
-      }
+              if (!pg_query($connection, $sqlInsert)) {
+                die('Error inserting into table.');
+              }
+            }
           }
   
  ?>
