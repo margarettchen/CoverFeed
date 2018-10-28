@@ -63,6 +63,20 @@
                   echo "<script>alert(\"There was an error.\");</script>";
             }
           }
+
+          // -------------newsletter signup---------------
+          $conn_string = "postgres://yryyyapkjdicty:be9383448f64e566523a74c14a25000423a9ba44818f55f4d81951a87be4d1d7@ec2-107-20-211-10.compute-1.amazonaws.com:5432/db6pl92dm9m24v";
+          $connection = pg_connect($conn_string);
+
+          $db_name = pg_dbname($connection);
+
+          if ($_POST['newsletter'] == 'emailList') {
+            $sqlInsert="INSERT INTO \"Newsletter\" (\"Name\", \"Email Address\") VALUES ('$name', '$email')";
+
+          if (!pg_query($connection, $sqlInsert)) {
+            die('Error inserting into table.');
+      }
+          }
   
  ?>
     <div class = "nav-bar">
