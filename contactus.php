@@ -22,6 +22,49 @@
 
   </head>
   <body>
+    <?php
+          if ($_SERVER["REQUEST_METHOD"] == "POST") {
+             
+              $name = $_POST['name'];
+              $email = $_POST['email'];
+              $message = $_POST['message'];
+              $newsletter = $_POST['newsletter'];
+
+              $passed = true;
+              if($message == ""){
+                  echo "<script>alert(\"Please fill out the message field.\");</script>";
+                  $passed = false;
+
+              }
+
+              if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                $passed = false;
+                echo "<script>alert(\"Please enter a valid email address.\");</script>";
+              }
+
+              if(ctype_alpha(str_replace(' ', '', $name)) === false){
+                 echo "<script>alert(\"Name can only contain letters and spaces.\");</script>";
+                 $passed = false;
+              }
+
+               if($passed){
+  
+                 //Email information
+                  $admin_email = "coverfeed@gmail.com";
+                  $subject = "Contact form from $name";
+                  
+                //send email
+                  mail($admin_email, "$subject", $message, "From:" . $email);
+      
+                //Email response
+                echo "<script>alert(\"Thank you for contacting us.\");</script>";
+            }
+            else{
+                  echo "<script>alert(\"There was an error.\");</script>";
+            }
+          }
+  
+ ?>
     <div class = "nav-bar">
     <li class="logo">
       <h1>CoverFeed</h1>
@@ -47,14 +90,14 @@
         <p>Questions? Comments? Concerns? Contact us.</p>
       </div>
       <div class="form-over" id="contact-form">
-        <form class="signup-form" action="#">
+        <form method="POST" class="signup-form" action="contactus.php">
           <p>Name:</p>
-          <input type="text" name="name" value="">
+          <input type="text" name="name" value="" required="required">
           <p> Email:</p>
-          <input type="text" name="email" value="">
+          <input type="text" name="email" value="" required="required">
           <p> Message:</p>
-          <textarea  name="message" form="contact-form"></textarea>
-          <br>
+          <textarea  name="message" required ></textarea>
+          <input type="checkbox" name="newsletter" value="emailList"> Sign me up for the CoverFeed newsletter!
           <input type="submit" value="Send">
         </form>
       </div>

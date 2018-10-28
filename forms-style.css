@@ -117,6 +117,9 @@ body{
 	font-size: 20px;
 	resize: none;
 }
+.signup-form input[type=checkbox]{
+	margin-top:15px;
+}
 .split-width{
 	width: 43.2%;
 	display: inline-block;
