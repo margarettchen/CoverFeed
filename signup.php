@@ -135,13 +135,13 @@
       //Email information
         
         $admin_email = "coverfeed@gmail.com";
-        $subject = "Thanks for signing up for the CoverFeed newsletter,".$firstName ."!";
+        $subject = "Thanks for signing up for CoverFeed, ".$firstName ."!";
         $headers = "Content-Type: text/html; charset=ISO-8859-1\r\n";  
         $headers .=  "From:" . $admin_email;
 
         $message = '<html><body>';
         $message .= '<h1>Welcome, '. $firstName.'!</h1>';
-        $message .= '<h3>By signing up for our emails, you\'ll be the first to hear about nearby events supporting the causes YOU care about.</h3>';
+        $message .= '<h3>By signing up for CoverFeed, you\'ll be the first to hear about nearby events supporting the causes YOU care about.</h3>';
         $message .= '<p>At CoverFeed we care about people. We aim to empower anyone to create, share, find and attend events that bring them joy and promote meaningful causes. Whether the cause touches only a few people or thousands, EventFeed can help. We strive to connect people through events that matter.</p>';
         $message .= '<h4>We promise to never send you spam or sell your contact information.</h4>' ;
         $message.='<p>Thank you from all of us at CoverFeed.<p>';
