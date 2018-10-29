@@ -127,12 +127,11 @@
 
       $sqlInsert="INSERT INTO \"Customer Information\" (\"firstname\", \"lastname\", \"email\", \"username\", \"password\", \"streetaddress\", \"city\", \"state\", \"zipcode\", \"phone\") VALUES ('$firstName', '$lastName', '$email', '$username', '$hashedPassword', '$address', '$city', '$state', '$zipcode', '$phone')";
 
-      if (!pg_query($connection, $sqlInsert)) {
+      /*if (!pg_query($connection, $sqlInsert)) {
         die('Error inserting into table.');
-      }
+      }*/
 
-
-      //Email information
+       //Email information
         
         $admin_email = "coverfeed@gmail.com";
         $subject = "Thanks for signing up for CoverFeed, ".$firstName ."!";
@@ -140,22 +139,20 @@
         $headers .=  "From:" . $admin_email;
 
         $message = '<html><body>';
-        $message .= '<h1>Welcome, '. $firstName.'!</h1>';
+        $message .= '<h1>Welsome, '. $firstName.' !</h1>';
         $message .= '<h3>By signing up for CoverFeed, you\'ll be the first to hear about nearby events supporting the causes YOU care about.</h3>';
         $message .= '<p>At CoverFeed we care about people. We aim to empower anyone to create, share, find and attend events that bring them joy and promote meaningful causes. Whether the cause touches only a few people or thousands, EventFeed can help. We strive to connect people through events that matter.</p>';
         $message .= '<h4>We promise to never send you spam or sell your contact information.</h4>' ;
-        $message.='<p>Thank you from all of us at CoverFeed.<p>';
         $message .= '</body></html>';
 
 
         //send email
         mail($email, "$subject", $message, $headers);
-      
-        echo "<script>alert(\"Your account has been created.\");</script>";
+
+      echo "<script>alert(\"Your account has been created.\");</script>";
 
 
-
-  	 } //end of if passed
+  	}
 
     }
 
