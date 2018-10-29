@@ -148,7 +148,7 @@
          $mail->setFrom('coverfeed@gmail.com', 'CoverFeed');
 
          /* Add a recipient. */
-         $mail->addAddress($email, $firstName . " " . $lastName);
+         $mail->addAddress($email);
 
          /* Set the subject. */
          $mail->Subject = 'Thanks for joining CoverFeed';
