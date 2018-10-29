@@ -21,35 +21,11 @@
   <body>
     <!-- PHP -->
     <?php
-      //require '/PHPMailer/src/Exception.php';
 
       use PHPMailer\PHPMailer\PHPMailer;
       use PHPMailer\PHPMailer\Exception;
-
-      //require 'PHPMailerAutoload.php';
 
       require 'vendor/autoload.php';
-
-
-        /* Exception class. */
-        //require '/../PHPMailer/src/Exception.php';
-
-        /* The main PHPMailer class. */
-       // require '\PHPMailer\src\PHPMailer.php';
-
-        /* SMTP class, needed if you want to use SMTP. */
-       // require '\PHPMailer\src\SMTP.php';
-
-   /*
-      use PHPMailer\PHPMailer\PHPMailer;
-      use PHPMailer\PHPMailer\Exception;
-      require '/PHPMailer/src/Exception.php';
-      require '/PHPMailer/src/PHPMailer.php';
-      require '/PHPMailer/src/SMTP.php';
-      //require 'PHPMailerAutoload.php';
-
-   */
-
 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -163,7 +139,7 @@
 
 
       //Email information
-/*
+/
       $mail = new PHPMailer(true);
       $mail = new PHPMailer;
       $mail->setFrom('coverfeed@gmail.com', 'CoverFeed');
@@ -177,7 +153,7 @@
         echo 'Message has been sent.';
       }
 
-*/
+
 
 
 
