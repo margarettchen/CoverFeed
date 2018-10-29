@@ -100,7 +100,7 @@
                      $mail->Subject = 'New contact form submitted';
 
                      /* Set the mail message body. */
-                     $mail->Body = $message;
+                     $mail->Body = $message . " From: ". $name . " at " . $email;
 
                      /* Finally send the mail. */
                      $mail->send();
