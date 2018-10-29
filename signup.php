@@ -249,31 +249,31 @@
         <form method="POST" class="signup-form" action="signup.php">
           <div class="half-width" style="margin-right: 12px;">
             <p>First Name:</p>
-            <input type="text" name="firstName" value="">
+            <input type="text" name="firstName" value="" required="required">
           </div>
           <div class="half-width">
             <p>Last Name:</p>
-            <input type="text" name="lastName" value="">
+            <input type="text" name="lastName" value="" required="required">
           </div>
           <p> Email:</p>
-          <input type="text" name="email" value="">
+          <input type="text" name="email" value="" required="required">
           <div class = "half-width" style="margin-right: 12px;">
             <p>Username:</p>
-            <input type="text" name="username" value="">
+            <input type="text" name="username" value="" required="required">
           </div>
           <div class = "half-width">
             <p>Password:</p>
-            <input type="password" name="password" value="">
+            <input type="password" name="password" value="" required="required">
           </div>
           <p>Street Address:</p>
-          <input type="text" name="address" value="">
+          <input type="text" name="address" value="" required="required">
           <div class = "split-width">
             <p>City:</p>
-            <input type="text" name="city" value="">
+            <input type="text" name="city" value="" required="required">
           </div>
           <div class="state-div">
             <p>State:</p>
-            <select name="state" class="drop">
+            <select name="state" class="drop" required="required">
               <option value="AL">AL</option>
               <option value="AK">AK</option>
               <option value="AZ">AZ</option>
@@ -326,10 +326,10 @@
           </div>
           <div class = "split-width">
             <p>Zip Code:</p>
-            <input type="text" name="zipcode" value="">
+            <input type="text" name="zipcode" value="" required="required">
           </div>
           <p>Phone:</p>
-            <input type="text" name="phone" value="">
+            <input type="text" name="phone" value="" required="required">
           <input type="submit" value="Sign Up">
         </form>
       </div>
