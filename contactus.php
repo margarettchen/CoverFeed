@@ -91,7 +91,7 @@
 
 
                      /* Set the mail sender. */
-                     $mail->setFrom('coverfeed@gmail.com', $name);
+                     $mail->setFrom($email, $name);
 
                      /* Add a recipient. */
                      $mail->addAddress('coverfeed@gmail.com', 'CoverFeed');
