@@ -173,10 +173,10 @@
          $mail->addAddress($email);
 
          /* Set the subject. */
-         $mail->Subject = 'Thanks for joining CoverFeed';
+         $mail->Subject = 'Thanks for joining CoverFeed.';
 
          /* Set the mail message body. */
-         $mail->Body = 'Thanks for signing up for CoverFeed.';
+         $mail->Body = 'Thanks for signing up for CoverFeed. We are excited to have you. You\'ll hear from us soon with more updates and exciting events';
 
          /* Finally send the mail. */
          $mail->send();

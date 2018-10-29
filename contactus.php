@@ -23,6 +23,13 @@
   </head>
   <body>
     <?php
+
+      use PHPMailer\PHPMailer\PHPMailer;
+      use PHPMailer\PHPMailer\Exception;
+
+      require 'vendor/autoload.php';
+
+
           if ($_SERVER["REQUEST_METHOD"] == "POST") {
              
               $name = $_POST['name'];
@@ -49,13 +56,71 @@
 
                if($passed){
   
-                 //Email information
+                /* //Email information
                   $admin_email = "coverfeed@gmail.com";
                   $subject = "Contact form from $name";
                   
                 //send email
                   mail($admin_email, "$subject", $message, "From:" . $email);
-      
+                 */
+
+                  $mail = new PHPMailer(TRUE);
+                  $mail->isSMTP();
+               
+                   /* SMTP server address. */
+                   $mail->Host = 'smtp.gmail.com';
+
+                   /* Use SMTP authentication. */
+                   $mail->SMTPAuth = TRUE;
+                   
+                   /* Set the encryption system. */
+                   $mail->SMTPSecure = 'tls';
+                   
+                   /* SMTP authentication username. */
+                   $mail->Username = 'coverfeed@gmail.com';
+                   
+                   /* SMTP authentication password. */
+                   $mail->Password = 'AlfWeaver1';
+                   
+                   /* Set the SMTP port. */
+                   $mail->Port = 587;
+               
+
+                  /* Open the try/catch block. */
+                  try {
+
+
+                     /* Set the mail sender. */
+                     $mail->setFrom('coverfeed@gmail.com', $name);
+
+                     /* Add a recipient. */
+                     $mail->addAddress('coverfeed@gmail.com', 'CoverFeed');
+
+                     /* Set the subject. */
+                     $mail->Subject = 'New contact form submitted';
+
+                     /* Set the mail message body. */
+                     $mail->Body = $message;
+
+                     /* Finally send the mail. */
+                     $mail->send();
+                  }
+                  catch (Exception $e)
+                  {
+                     /* PHPMailer exception. */
+                     echo $e->errorMessage();
+                  }
+                  catch (\Exception $e)
+                  {
+                     /* PHP exception (note the backslash to select the global namespace Exception class). */
+                     echo $e->getMessage();
+                  }
+
+
+
+
+
+
                 //Email response
                 echo "<script>alert(\"Thank you for contacting us.\");</script>";
             }
