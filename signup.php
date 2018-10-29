@@ -139,24 +139,36 @@
 
 
       //Email information
-/
-      $mail = new PHPMailer(true);
-      $mail = new PHPMailer;
-      $mail->setFrom('coverfeed@gmail.com', 'CoverFeed');
-      $mail->addAddress($email, $firstName);
-      $mail->Subject  = 'Thanks for signing up for CoverFeed';
-      $mail->Body     = 'Thanks for signing up for CoverFeed. You\'ll hear more from us soon.';
-      if(!$mail->send()) {
-        echo 'Message was not sent.';
-        echo 'Mailer error: ' . $mail->ErrorInfo;
-      } else {
-        echo 'Message has been sent.';
+      /* Create a new PHPMailer object. Passing TRUE to the constructor enables exceptions. */
+      $mail = new PHPMailer(TRUE);
+
+      /* Open the try/catch block. */
+      try {
+         /* Set the mail sender. */
+         $mail->setFrom('coverfeed@gmail.com', 'CoverFeed');
+
+         /* Add a recipient. */
+         $mail->addAddress($email, $firstName . " " . $lastName);
+
+         /* Set the subject. */
+         $mail->Subject = 'Thanks for joining CoverFeed';
+
+         /* Set the mail message body. */
+         $mail->Body = 'Thanks for signing up for CoverFeed.';
+
+         /* Finally send the mail. */
+         $mail->send();
       }
-
-
-
-
-
+      catch (Exception $e)
+      {
+         /* PHPMailer exception. */
+         echo $e->errorMessage();
+      }
+      catch (\Exception $e)
+      {
+         /* PHP exception (note the backslash to select the global namespace Exception class). */
+         echo $e->getMessage();
+      }
 
         /*
         $admin_email = "coverfeed@gmail.com";
