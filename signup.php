@@ -141,9 +141,31 @@
       //Email information
       /* Create a new PHPMailer object. Passing TRUE to the constructor enables exceptions. */
       $mail = new PHPMailer(TRUE);
+      $mail->isSMTP();
+   
+       /* SMTP server address. */
+       $mail->Host = 'smtp.gmail.com';
+
+       /* Use SMTP authentication. */
+       $mail->SMTPAuth = TRUE;
+       
+       /* Set the encryption system. */
+       $mail->SMTPSecure = 'tls';
+       
+       /* SMTP authentication username. */
+       $mail->Username = 'coverfeed@gmail.com';
+       
+       /* SMTP authentication password. */
+       $mail->Password = 'AlfWeaver1';
+       
+       /* Set the SMTP port. */
+       $mail->Port = 587;
+   
 
       /* Open the try/catch block. */
       try {
+
+
          /* Set the mail sender. */
          $mail->setFrom('coverfeed@gmail.com', 'CoverFeed');
 
