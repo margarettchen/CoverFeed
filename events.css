@@ -83,6 +83,19 @@ body{
 	font-size: 3.2vw;
 	padding: 2.4%;
 	padding-left: 0;
+	display: inline-block;
+
+}
+.learnMore{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 25px;
+	margin-left: 30px;
+	background-color: white;
+	color: #19191B;
+	padding: 10px;
+	border-radius: 6px;
+	font-weight: bold;
 }
 
 .price {
@@ -175,4 +188,95 @@ body{
 a {
 	color: white;
 }
+/**** EVENT OVERLAY ****/
+.event-overlay{
+	display: none;
+	position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; 
+	background: rgba(0, 0, 0, 0.7);
+}
+.event-over-cont{
+	display: none;
+	background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 30px;
+    width: 80%; 
+    color:#19191B;
+}
+.event-over-cont a{
+	color:#19191B;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/** gallery ***/
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 23%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+    width: 100%;
+    height: auto;
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container {
+    position: relative;
+    display: none;
+    /*width: 48%;*/
+    padding: 10px;
+    text-align: center;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the image 
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}*/
