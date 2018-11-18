@@ -1,0 +1,282 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #19191B;
+	color: #FFFFFF;
+
+}
+
+.nav-bar {
+	list-style: none;
+	background-color: #FFFFFF;
+	padding-left: 2%;
+}
+
+.nav-bar li {
+	display: inline-block;
+	padding-left: 3%;
+	font-family: 'Montserrat';
+	vertical-align: middle;
+}
+
+.nav-bar a {
+	text-decoration: none;
+	color: #484848;
+}
+
+.logo h1 {
+	font-family: 'Pacifico', cursive;
+	font-size: 40px;
+	margin: 0;
+	color: #484848;
+}
+
+.logo {
+	padding-right: 40%;
+}
+
+.eventsHeader {
+	margin-left: 6%;
+	margin-top: 6%;
+	font-size: 6.8vw;
+}
+
+.event {
+	margin: 6% 6%;
+	border-width: 4px;
+	border-color: white;
+	border-radius: 24px;
+	border-style: solid;
+}
+
+.titleCard {
+	border-radius: 24px 0 0 0;
+	border-style: solid;
+	border-width: 2px;
+	border-color: white;
+	border-top: none;
+	border-left: none;
+	width: 71%;
+	display: inline-block;
+	padding-left: 5%;
+	padding-top: 1.8%;
+}
+
+.titleCard.one {
+	background-image: url("images/nyc2.png");
+	background-size: cover;
+	background-position: left;
+}
+
+.titleCard.two {
+	background-image: url("images/uva2.png");
+	background-size: cover;
+	background-position: left;
+}
+
+.name {
+	font-size: 5vw;
+}
+
+.location {
+	font-size: 3.2vw;
+	padding: 2.4%;
+	padding-left: 0;
+	display: inline-block;
+
+}
+.learnMore{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 25px;
+	margin-left: 30px;
+	background-color: white;
+	color: #19191B;
+	padding: 10px;
+	border-radius: 6px;
+	font-weight: bold;
+}
+
+.price {
+	display: inline-block;
+	border-style: solid;
+	border-width: 2px;
+	border-color: white;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	width: 23.8%;
+	font-size: 5.6vw;
+	text-align: center;
+	padding: 4.37% 0;
+	vertical-align: top;
+}
+
+.price:hover {
+	cursor: pointer;
+	background-color: white;
+	color: #19191B;
+	border-radius: 0 20px 0 0;
+}
+
+.description {
+	padding: 2%;
+	line-height: 24px;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	display: none;
+	opacity: 0;
+}
+
+.overlay:target {
+	display: table;
+	background: rgba(244, 244, 244, 0.9);
+	opacity: 1;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.overlayContent {
+	border-style: solid;
+	border-color: #19191B;
+	border-width: 2px;
+}
+
+.overlayMsg {
+	color: #19191B;
+	font-size: 2vw;
+	font-weight: bold;
+	position: absolute;
+	top: 40%;
+	left: 36%;
+}
+
+.payment {
+	position: absolute;
+	top: 48%;
+	left: 38.5%;
+}
+
+.closebtn {
+	position: absolute;
+	left: 70%;
+	top: 32%;
+	text-decoration: none;
+	float: right;
+	font-size: 35px;
+	font-weight: bold;
+	color: #19191B;
+}
+
+.closebtn:hover,
+.closebtn:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a {
+	color: white;
+}
+/**** EVENT OVERLAY ****/
+.event-overlay{
+	display: none;
+	position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; 
+	background: rgba(0, 0, 0, 0.7);
+}
+.event-over-cont{
+	display: none;
+	background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 30px;
+    width: 80%; 
+    color:#19191B;
+}
+.event-over-cont a{
+	color:#19191B;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/** gallery ***/
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 23%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+    width: 100%;
+    height: auto;
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container {
+    position: relative;
+    display: none;
+    /*width: 48%;*/
+    padding: 10px;
+    text-align: center;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the image 
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}*/
