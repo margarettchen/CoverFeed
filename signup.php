@@ -136,6 +136,10 @@
       $sqlInsert="INSERT INTO \"Customer Information\" (\"firstname\", \"lastname\", \"email\", \"username\", \"password\", \"streetaddress\", \"city\", \"state\", \"zipcode\", \"phone\") VALUES ('$firstName', '$lastName', '$email', '$username', '$hashedPassword', '$address', '$city', '$state', '$zipcode', '$phone')";
 
       $_SESSION['login'] = true;
+      $_SESSION["name"] = $first . " " . $last ;
+      $_SESSION["location"] = $city . ", ". $state;
+      $_SESSION["email"] = $email ;
+      $_SESSION["phone"] = $phone;
       header('Location: member.php');
 
       if (!pg_query($connection, $sqlInsert)) {
