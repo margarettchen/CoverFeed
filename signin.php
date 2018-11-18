@@ -23,6 +23,51 @@
 
   </head>
   <body>
+
+    <?php
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+      $username = $_POST['username'];
+      $password = $_POST['password'];
+      $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+      $conn_string = "postgres://yryyyapkjdicty:be9383448f64e566523a74c14a25000423a9ba44818f55f4d81951a87be4d1d7@ec2-107-20-211-10.compute-1.amazonaws.com:5432/db6pl92dm9m24v";
+      $connection = pg_connect($conn_string);
+
+      $usernameQuery = "SELECT * FROM \"Customer Information\" WHERE username = '" . $username . "'";
+      $usernameQueryResult = pg_query($connection, $usernameQuery);
+
+      if(pg_fetch_row($usernameQueryResult)) {
+        $passwordQuery = "SELECT password FROM \"Customer Information\" WHERE username = '" . $username . "'";
+        $passwordQueryResult = pg_query($connection, $passwordQuery);
+        $row = pg_fetch_row($passwordQueryResult);
+        $hash = $row[0];
+
+        if(password_verify($password, $hash)) {
+          // Continue to login the user
+          ob_start();
+          header('Location: member.php');
+          ob_end_flush();
+          die();
+      
+        } else {
+          // Error that password is bad.
+          echo "<script>alert(\"The password entered does not match our records. Please re-enter your information.\");</script>";
+        }
+        
+      } else {
+        // Error that username is wrong
+        echo "<script>alert(\"The username entered does not match our records. Please re-enter your information.\");</script>";
+      }
+    }
+
+
+
+      
+
+    ?>
+
     <div class = "nav-bar">
     <li class="logo">
       <h1>CoverFeed</h1>
@@ -48,11 +93,11 @@
         <p>Sign in to discover exciting events near you.</p>
       </div>
       <div class="form-over">
-        <form class="signup-form" action="#">
+        <form method="POST" class="signup-form" action="signin.php">
           <p>Username:</p>
-          <input type="text" name="username" value="">
+          <input type="text" name="username" value="" required="required">
           <p> Password:</p>
-          <input type="password" name="password" value="">
+          <input type="password" name="password" value="" required="required">
           <br>
           <input type="submit" value="Sign In">
         </form>
