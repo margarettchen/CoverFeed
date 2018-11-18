@@ -373,8 +373,8 @@
       <h1>Profile Info</h1>
       <ul>
         <li>Name: <?php echo $_SESSION["name"]; ?></li>
-        <li>Location: <?php echo $_SESSION["location"]; ?>/li>
-        <li>Email: <?php echo $_SESSION["email"]; ?>/li>
+        <li>Location: <?php echo $_SESSION["location"]; ?></li>
+        <li>Email: <?php echo $_SESSION["email"]; ?></li>
         <li>Phone: <?php echo $_SESSION["phone"]; ?></li>
       </ul>
 

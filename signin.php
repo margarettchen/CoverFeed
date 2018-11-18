@@ -27,6 +27,7 @@
   <body>
 
     <?php
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $username = $_POST['username'];
       $password = $_POST['password'];
@@ -44,14 +45,35 @@
           // Continue to login the user
           $_SESSION['login'] = true; //set Session when login is successful
           //getting necessary database info
-          $sessName = $row[0] . " " . $row[1];
+          $firstnameQuery = "SELECT firstname FROM \"Customer Information\" WHERE username = '" . $username . "'";
+          $fnQueryResult = pg_query($connection, $firstnameQuery);
+          $rowfn = pg_fetch_row($fnQueryResult);
+          $first = $rowfn[0];
+
+          $lastnameQuery = "SELECT lastname FROM \"Customer Information\" WHERE username = '" . $username . "'";
+          $lnQueryResult = pg_query($connection, $lastnameQuery);
+          $rowln = pg_fetch_row($lnQueryResult);
+          $last = $rowln[0];
+
+
+          $cityQuery = "SELECT city FROM \"Customer Information\" WHERE username = '" . $username . "'";
+          $cityQueryResult = pg_query($connection, $cityQuery);
+          $rowcity = pg_fetch_row($cityQueryResult);
+          $city = $rowcity[0];
+
+
+          $stateQuery = "SELECT state FROM \"Customer Information\" WHERE username = '" . $username . "'";
+          $emailQuery = "SELECT email FROM \"Customer Information\" WHERE username = '" . $username . "'";
+          $phoneQuery = "SELECT phone FROM \"Customer Information\" WHERE username = '" . $username . "'";
+
+          $sessName = $first . " " . $last;
           $sessLoc = $row[6] . ", " . $row[7];
           $sessEmail = $row[2];
           $sessPhone = $row[9];
 
           //Info to pass through sessions
           $_SESSION["name"] = $sessName ;
-          $_SESSION["location"] = $sessLoc ;
+          $_SESSION["location"] = $city ;
           $_SESSION["email"] = $sessEmail ;
           $_SESSION["phone"] = $sessPhone ;
           ob_start();
