@@ -1,3 +1,7 @@
+<?php 
+  if($_SESSION['login'] !== true) header("location:member.php");
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,8 +26,8 @@
   </head>
   <body>
 
-<!--PHP MAIL START
-?php
+<!--PHP MAIL START-->
+<?php
 
       use PHPMailer\PHPMailer\PHPMailer;
       use PHPMailer\PHPMailer\Exception;
@@ -112,7 +116,7 @@
           }
 
     ?>
-PHP MAIL END-->
+<!--PHP MAIL END-->
 
 
       <div class="nav-bar">
