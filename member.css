@@ -355,3 +355,115 @@ a {
     font-size: 35px;
     cursor: pointer;
 }*/
+
+
+/*Create event*/
+
+.create-over-cont{
+	display: none;
+	background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 40px;
+    border: 1px solid #888;
+    border-radius: 30px;
+    width: 80%; 
+    color:#19191B;
+
+}
+.create-over-cont a{
+	color:#19191B;
+}
+.close3 {
+    color: #aaa;
+    float: right;
+    margin-right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close3:hover,
+.close3:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.signup-form input[type=text],.signup-form input[type=password]{
+	border-style: none;
+	background-color: #EEEEEE; 
+	height: 40px;
+	width: calc(100% - 15px);
+	border-radius: 8px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	padding-left: 10px;
+}
+.signup-form input[type=submit]{
+	margin-top: 15px;
+	margin-bottom: 0px;
+	border-style: none;
+	background-color:#E77171; 
+	height: 40px;
+	width: 100%;
+	border-radius: 8px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	color: white;
+}
+.signup-form input[type=checkbox]{
+	margin-top:15px;
+}
+.signup-form textarea[name=message]{
+	border-style: none;
+	background-color:#EEEEEE; 
+	height: 70px;
+	padding: 10px;
+	width: calc(100% - 25px);
+	border-radius: 8px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	resize: none;
+}
+.signup-form input[type=checkbox]{
+	margin-top:15px;
+}
+.split-width{
+	width: 44.8%;
+	display: inline-block;
+}
+.half-width{
+	width: 48.5%;
+	display: inline-block;
+}
+.state-div{
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 1.5%;
+	margin-left: 1.5%;
+}
+.drop{
+	border-style: none;
+	background-color: #EEEEEE; 
+	height: 42px;
+	border-radius: 8px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+	display: inline-block;
+}
+
+.date-style{
+	border-style: none;
+	background-color: #EEEEEE; 
+	height: 42px;
+	border-radius: 8px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+	display: inline-block;
+	width: calc(100% - 15px);
+	margin-right: 12px;
+}
