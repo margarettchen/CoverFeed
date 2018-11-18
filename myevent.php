@@ -88,7 +88,7 @@
                      /* Set the subject. */
                      $mail->Subject = 'New event form submitted';
                      /* Set the mail message body. */
-                     $mail->Body = " From: ". $name . " at " . $email;
+                     $mail->Body = " From: ". $firstName . " " . $lastName . " at " . $email . "\n Address: " . $address ."  " .$city .", ".$state." ".$zipcode."\n Phone: ".$phone."\n Organization: ".$org."\n Fee: ".$fee ;
                      /* Finally send the mail. */
                      $mail->send();
                   }
