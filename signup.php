@@ -135,6 +135,9 @@
 
       $sqlInsert="INSERT INTO \"Customer Information\" (\"firstname\", \"lastname\", \"email\", \"username\", \"password\", \"streetaddress\", \"city\", \"state\", \"zipcode\", \"phone\") VALUES ('$firstName', '$lastName', '$email', '$username', '$hashedPassword', '$address', '$city', '$state', '$zipcode', '$phone')";
 
+      $_SESSION['login'] = true;
+      header('Location: member.php');
+
       if (!pg_query($connection, $sqlInsert)) {
         die('Error inserting into table.');
       }
@@ -213,8 +216,7 @@
         mail($email, "$subject", $message, $headers);
       */
         echo "<script>alert(\"Your account has been created.\");</script>";
-        $_SESSION['login'] = true;
-        header('Location: member.php');
+
 
 
 
