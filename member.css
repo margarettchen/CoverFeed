@@ -267,7 +267,7 @@ a {
 .event-overlay{
 	display: none;
 	position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 0; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -368,7 +368,7 @@ a {
     border-radius: 30px;
     width: 80%; 
     color:#19191B;
-
+    z-index: 100;
 }
 .create-over-cont a{
 	color:#19191B;

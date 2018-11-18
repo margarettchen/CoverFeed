@@ -22,8 +22,8 @@
   </head>
   <body>
 
-<!--PHP MAIL START-->
-<?php
+<!--PHP MAIL START
+?php
 
       use PHPMailer\PHPMailer\PHPMailer;
       use PHPMailer\PHPMailer\Exception;
@@ -112,7 +112,7 @@
           }
 
     ?>
-<!--PHP MAIL END-->
+PHP MAIL END-->
 
 
       <div class="nav-bar">
@@ -139,9 +139,9 @@
     <div class="button_cont" align="center"><a class="example_c" href="logout.php" target="_blank" rel="nofollow noopener">Sign Out</a>
     </div>
     <div class="memberHeader">Member Page</div>
-    <div class= "event-overlay" id="event-overlay">
+    <div class= "event-overlay" id="event-overlay"></div>
 
-<!--Start create event
+<!--Start create event-->
 
 
       <div class ="create-over-cont" id ="create-cont">
@@ -149,7 +149,7 @@
             <h1>Create your own event</h1>
             <p>Fill out this form to submit an event to CoverFeed, once it is reviewed and accepted it will be posted on our list of upcomming events</p>
 
-            <form method="POST" class="signup-form" action="myevent.php">
+            <form method="POST" class="signup-form" action="member.php">
               <div class="half-width" >
                 <p>First Name:</p>
                 <input type="text" name="firstName" value="" required="required">
@@ -241,7 +241,7 @@
             </form>
 
 
-End create event -->
+<!--End create event -->
 
 
       <div class ="event-over-cont" id="more-event1">
@@ -372,7 +372,7 @@ End create event -->
         <li>Phone: (703) 338-8557</li>
       </ul>
 
-      <div class="button_cont" align="center" id ="create-event"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener">Create an Event</a></div>
+      <div class="button_cont" align="center" id ="create-event"><a class="example_a"  rel="nofollow noopener">Create an Event</a></div>
 
     </div>
   
