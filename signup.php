@@ -324,6 +324,7 @@
               <option value="TN">TN</option>
               <option value="TX">TX</option>
               <option value="UT">UT</option>
+              <option value="VA">VA</option>
               <option value="VT">VT</option>
               <option value="WA">WA</option>
               <option value="WV">WV</option>
