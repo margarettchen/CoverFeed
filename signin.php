@@ -82,7 +82,7 @@
          
 
           //Info to pass through sessions
-          $_SESSION["name"] = $sessName ;
+          $_SESSION["name"] = $first . " " . $last ;
           $_SESSION["location"] = $city . ", ". $state;
           $_SESSION["email"] = $email ;
           $_SESSION["phone"] = $phone;
