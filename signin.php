@@ -63,19 +63,29 @@
 
 
           $stateQuery = "SELECT state FROM \"Customer Information\" WHERE username = '" . $username . "'";
-          $emailQuery = "SELECT email FROM \"Customer Information\" WHERE username = '" . $username . "'";
-          $phoneQuery = "SELECT phone FROM \"Customer Information\" WHERE username = '" . $username . "'";
+          $stateQueryResult = pg_query($connection, $stateQuery);
+          $rowstate = pg_fetch_row($stateQueryResult);
+          $state= $rowstate[0];
 
-          $sessName = $first . " " . $last;
-          $sessLoc = $row[6] . ", " . $row[7];
-          $sessEmail = $row[2];
-          $sessPhone = $row[9];
+
+          $emailQuery = "SELECT email FROM \"Customer Information\" WHERE username = '" . $username . "'";
+          $emailQueryResult = pg_query($connection, $emailQuery);
+          $rowemail = pg_fetch_row($emailQueryResult);
+          $email = $rowemail[0];
+
+
+          $phoneQuery = "SELECT phone FROM \"Customer Information\" WHERE username = '" . $username . "'";
+          $phoneQueryResult = pg_query($connection, $phoneQuery);
+          $rowphone = pg_fetch_row($phoneQueryResult);
+          $phone = $rowphone[0];
+
+         
 
           //Info to pass through sessions
           $_SESSION["name"] = $sessName ;
-          $_SESSION["location"] = $city ;
-          $_SESSION["email"] = $sessEmail ;
-          $_SESSION["phone"] = $sessPhone ;
+          $_SESSION["location"] = $city . ", ". $state;
+          $_SESSION["email"] = $email ;
+          $_SESSION["phone"] = $phone;
           ob_start();
           header('Location: member.php');
           ob_end_flush();
