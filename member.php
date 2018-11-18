@@ -43,8 +43,9 @@
         </li>
     </div>
 
-    <div class="eventsHeader">Member Page</div>
-    <div class="eventsHeader">Upcoming Events</div>
+    <div class="button_cont" align="center"><a class="example_c" href="add-website-here" target="_blank" rel="nofollow noopener">Sign Out</a>
+    </div>
+    <div class="memberHeader">Member Page</div>
     <div class= "event-overlay" id="event-overlay">
       <div class ="event-over-cont" id="more-event1">
         <span class="close" id = "close">&times;</span>
@@ -164,7 +165,20 @@
         </form>
       </div>
     </div>
+
+    <div class="member-info">
+      <h1>Profile Info</h1>
+      <ul>
+        <li>Name: Margaret Chen</li>
+        <li>Location: Charlottesville, VA</li>
+        <li>Email: margaret.chen98@gmail.com</li>
+        <li>Phone: (703) 338-8557</li>
+      </ul>
+
+    </div>
+
     <div class="events">
+      <div class="eventsHeader">Upcoming Events</div>
       <div class="event">
         <div class="titleCard one">
           <div class="name">JDRF's One Walk</div>
