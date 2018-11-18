@@ -1,4 +1,6 @@
-
+<?php
+  session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -211,6 +213,8 @@
         mail($email, "$subject", $message, $headers);
       */
         echo "<script>alert(\"Your account has been created.\");</script>";
+        $_SESSION['login'] = true;
+        header('Location: member.php');
 
 
 
