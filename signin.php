@@ -1,18 +1,20 @@
-
+<?php
+  session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	 <!--<link rel="icon" 
-      	target="" ype="image/png" 
-      	href="#">-->
+   <!--<link rel="icon" 
+        target="" ype="image/png" 
+        href="#">-->
 
     <title>Sign In</title>
 
-  	<!-- styling -->
+    <!-- styling -->
     <link rel="stylesheet" href="forms-style.css" type='text/css'> 
     
     <!--fonts-->
@@ -25,27 +27,22 @@
   <body>
 
     <?php
-
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
       $username = $_POST['username'];
       $password = $_POST['password'];
       $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
       $conn_string = "postgres://yryyyapkjdicty:be9383448f64e566523a74c14a25000423a9ba44818f55f4d81951a87be4d1d7@ec2-107-20-211-10.compute-1.amazonaws.com:5432/db6pl92dm9m24v";
       $connection = pg_connect($conn_string);
-
       $usernameQuery = "SELECT * FROM \"Customer Information\" WHERE username = '" . $username . "'";
       $usernameQueryResult = pg_query($connection, $usernameQuery);
-
       if(pg_fetch_row($usernameQueryResult)) {
         $passwordQuery = "SELECT password FROM \"Customer Information\" WHERE username = '" . $username . "'";
         $passwordQueryResult = pg_query($connection, $passwordQuery);
         $row = pg_fetch_row($passwordQueryResult);
         $hash = $row[0];
-
         if(password_verify($password, $hash)) {
           // Continue to login the user
+          $_SESSION['login'] = true; //set Session when login is successful
           ob_start();
           header('Location: member.php');
           ob_end_flush();
@@ -61,11 +58,7 @@
         echo "<script>alert(\"The username entered does not match our records. Please re-enter your information.\");</script>";
       }
     }
-
-
-
       
-
     ?>
 
     <div class = "nav-bar">
