@@ -103,7 +103,7 @@
                   }
 
                 //Email response
-                echo "<script>alert(\"Thank you for contacting us.\");</script>";
+                echo "<script>alert(\"Thank you for submitting an event.\");</script>";
             }
             else{
                 echo "<script>alert(\"There was an error.\");</script>";
