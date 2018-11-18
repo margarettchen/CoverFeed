@@ -141,7 +141,7 @@
     <div class="memberHeader">Member Page</div>
     <div class= "event-overlay" id="event-overlay">
 
-<!--Start create event-->
+<!--Start create event
 
 
       <div class ="create-over-cont" id ="create-cont">
@@ -241,7 +241,7 @@
             </form>
 
 
-<!---End create event -->
+End create event -->
 
 
       <div class ="event-over-cont" id="more-event1">
@@ -290,7 +290,7 @@
         </div>
       </div>
       <div class ="event-over-cont" id="more-event2">
-                <span class="close" id="close2">&times;</span>
+        <span class="close" id="close2">&times;</span>
         <h1 class="evTitle">AXO Bridgefest</h1>
         <hr>
         <div class="theCause">
