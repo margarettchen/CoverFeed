@@ -372,10 +372,10 @@
     <div class="member-info">
       <h1>Profile Info</h1>
       <ul>
-        <li>Name: <?php echo $_SESSION["secretword"]; ?></li>
-        <li>Location: Charlottesville, VA</li>
-        <li>Email: margaret.chen98@gmail.com</li>
-        <li>Phone: (703) 338-8557</li>
+        <li>Name: <?php echo $_SESSION["name"]; ?></li>
+        <li>Location: <?php echo $_SESSION["location"]; ?>/li>
+        <li>Email: <?php echo $_SESSION["email"]; ?>/li>
+        <li>Phone: <?php echo $_SESSION["phone"]; ?></li>
       </ul>
 
       <div class="button_cont" align="center" id ="create-event"><a class="example_a"  rel="nofollow noopener">Create an Event</a></div>

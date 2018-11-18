@@ -43,7 +43,17 @@
         if(password_verify($password, $hash)) {
           // Continue to login the user
           $_SESSION['login'] = true; //set Session when login is successful
-          $_SESSION["secretword"] = "ABC123" ;
+          //getting necessary database info
+          $sessName = $row[0] . " " . $row[1];
+          $sessLoc = $row[6] . ", " . $row[7];
+          $sessEmail = $row[2];
+          $sessPhone = $row[9];
+
+          //Info to pass through sessions
+          $_SESSION["name"] = $sessName ;
+          $_SESSION["location"] = $sessLoc ;
+          $_SESSION["email"] = $sessEmail ;
+          $_SESSION["phone"] = $sessPhone ;
           ob_start();
           header('Location: member.php');
           ob_end_flush();
