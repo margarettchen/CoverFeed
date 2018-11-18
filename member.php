@@ -153,7 +153,7 @@
       <div class ="create-over-cont" id ="create-cont">
             <span class="close" id = "close3">&times;</span>
             <h1>Create your own event</h1>
-            <p>Fill out this form to submit an event to CoverFeed, once it is reviewed and accepted it will be posted on our list of upcomming events</p>
+            <p>Fill out this form to submit an event to CoverFeed, once it is reviewed and accepted it will be posted on our list of upcoming events</p>
 
             <form method="POST" class="signup-form" action="member.php">
               <div class="half-width" >
@@ -372,7 +372,7 @@
     <div class="member-info">
       <h1>Profile Info</h1>
       <ul>
-        <li>Name: Margaret Chen</li>
+        <li>Name: <?php echo $_SESSION["secretword"]; ?></li>
         <li>Location: Charlottesville, VA</li>
         <li>Email: margaret.chen98@gmail.com</li>
         <li>Phone: (703) 338-8557</li>

@@ -43,6 +43,7 @@
         if(password_verify($password, $hash)) {
           // Continue to login the user
           $_SESSION['login'] = true; //set Session when login is successful
+          $_SESSION["secretword"] = "ABC123" ;
           ob_start();
           header('Location: member.php');
           ob_end_flush();
