@@ -1,6 +1,7 @@
 <?php 
   session_start();
   if($_SESSION['login'] == true) header("location:member.php");
+  if($_SESSION['login'] != true) header("location:index.php");
 ?>
 
 <!doctype html>
