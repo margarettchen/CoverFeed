@@ -45,6 +45,7 @@ body{
 	width: 150px;
 	text-align: center;
 }
+/** copy starts here **/
 
 
 .event-overlay{
@@ -58,7 +59,7 @@ body{
     overflow: auto; 
 	background: rgba(0, 0, 0, 0.7);
 }
-.event-over-cont{
+.create-over-cont{
 	display: none;
 	background-color: #fefefe;
     margin: 5% auto; /* 15% from the top and centered */
@@ -69,10 +70,10 @@ body{
     color:#19191B;
 
 }
-.event-over-cont a{
+.create-over-cont a{
 	color:#19191B;
 }
-.close {
+.close3 {
     color: #aaa;
     float: right;
     margin-right: 10px;
@@ -80,8 +81,8 @@ body{
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close3:hover,
+.close3:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;

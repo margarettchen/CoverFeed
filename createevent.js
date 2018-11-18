@@ -2,7 +2,7 @@
 var modal = document.getElementById('event-overlay');
 
 //Get the modal contents
-var cont1 = document.getElementById('over-cont');
+var cont1 = document.getElementById('create-cont');
 
 
 
@@ -10,7 +10,7 @@ var cont1 = document.getElementById('over-cont');
 var btn1 = document.getElementById("create-event");
 
 // Get the <span> element that closes the modal
-var span = document.getElementById("close");
+var span = document.getElementById("close3");
 
 // When the user clicks on the button, open the modal 
 btn1.onclick = function() {

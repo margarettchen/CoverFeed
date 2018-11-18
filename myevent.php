@@ -135,10 +135,10 @@
 
     <div class="event-button" id="create-event">Create an Event</div>
 
-    <div class="event-overlay" id="event-overlay">
+    <div class="create-overlay" id="create-overlay">
 
-      <div class ="event-over-cont" id ="over-cont">
-            <span class="close" id = "close">&times;</span>
+      <div class ="create-over-cont" id ="create-cont">
+            <span class="close" id = "close3">&times;</span>
             <h1>Create your own event</h1>
             <p>Fill out this form to submit an event to CoverFeed, once it is reviewed and accepted it will be posted on our list of upcomming events</p>
 
